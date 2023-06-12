@@ -1,0 +1,145 @@
+{
+  "info": {
+    "_postman_id": "d5c760ba-555e-4957-acd2-21491fe19639",
+    "name": "RSA_Maps",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23441909"
+  },
+  "item": [
+    {
+      "name": "AddPlace",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"location\": {\r\n    \"lat\": -38.383494,\r\n    \"lng\": 33.427362\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"Rahul Shatty Academy\",\r\n  \"phone_number\": \"(+91) 983 893 3937\",\r\n  \"address\": \"29, side layout, cohen 09\",\r\n  \"types\": [\r\n    \"education\",\r\n    \"shop\"\r\n  ],\r\n  \"website\": \"https://rahulshettyacademy.com\",\r\n  \"language\": \"French-IN\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}maps/api/place/add/json?key ={{key}}",
+          "host": [
+            "{{baseURL}}maps"
+          ],
+          "path": [
+            "api",
+            "place",
+            "add",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key ",
+              "value": "{{key}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetPlace",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}maps/api/place/get/json?key={{key}}&place_id={{place_id}}",
+          "host": [
+            "{{baseURL}}maps"
+          ],
+          "path": [
+            "api",
+            "place",
+            "get",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{key}}"
+            },
+            {
+              "key": "place_id",
+              "value": "{{place_id}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeletePlace",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"place_id\":\"{{place_id}}\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}maps/api/place/delete/json?key={{key}}",
+          "host": [
+            "{{baseURL}}maps"
+          ],
+          "path": [
+            "api",
+            "place",
+            "delete",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{key}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdatePlace",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"place_id\":\"{{place_id}}\",\r\n    \"address\":\"70 Summer Walk, USA\",\r\n    \"key\":\"{{key}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}maps/api/place/update/json?key={{key}}",
+          "host": [
+            "{{baseURL}}maps"
+          ],
+          "path": [
+            "api",
+            "place",
+            "update",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{key}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

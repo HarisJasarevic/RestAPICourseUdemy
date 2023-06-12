@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "cd1ef8b9-99bf-47f6-80a2-3b17bfd29665",
+		"name": "Library_API_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23441909"
+	},
+	"item": [
+		{
+			"name": "AddBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON\r",
+							"var responseBody = pm.response.json();\r",
+							"\r",
+							"// Extract the ID value from the response\r",
+							"var id = responseBody.ID;\r",
+							"\r",
+							"// Set the ID value to the environment variable\r",
+							"pm.environment.set(\"ID\", id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"name\":\"Learn Appium Automation with Java\",\r\n\"isbn\":\"JF2023-Book\",\r\n\"aisle\":\"227\",\r\n\"author\":\"John foe\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURI}}/Library/Addbook.php",
+					"host": [
+						"{{baseURI}}"
+					],
+					"path": [
+						"Library",
+						"Addbook.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddBook2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON\r",
+							"var responseBody = pm.response.json();\r",
+							"\r",
+							"// Extract the ID value from the response\r",
+							"var id1 = responseBody.ID;\r",
+							"\r",
+							"// Set the ID value to the environment variable\r",
+							"pm.environment.set(\"ID\", id1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"name\":\"Learn Appium Automation with Java\",\r\n\"isbn\":\"BS2023-Book\",\r\n\"aisle\":\"227\",\r\n\"author\":\"Bukayo Saka\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURI}}/Library/Addbook.php",
+					"host": [
+						"{{baseURI}}"
+					],
+					"path": [
+						"Library",
+						"Addbook.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURI}}/Library/GetBook.php?ID={{ID}}",
+					"host": [
+						"{{baseURI}}"
+					],
+					"path": [
+						"Library",
+						"GetBook.php"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "{{ID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ID\" : \"{{ID}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURI}}/Library/DeleteBook.php?ID={{ID}}",
+					"host": [
+						"{{baseURI}}"
+					],
+					"path": [
+						"Library",
+						"DeleteBook.php"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "{{ID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
