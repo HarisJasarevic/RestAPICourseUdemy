@@ -1,0 +1,257 @@
+{
+  "info": {
+    "_postman_id": "0bb47330-f02d-474d-8d88-890541f0f7db",
+    "name": "JIRA_API_Session",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23441909"
+  },
+  "item": [
+    {
+      "name": "GetAuthCookie",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const responseJson = pm.response.json();\r",
+              "const sessionCookie = responseJson.session.value;\r",
+              "\r",
+              "pm.environment.set('sessionCookie', sessionCookie);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"{{username}}\", \"password\": \"{{password}}\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURI}}/rest/auth/1/session",
+          "host": [
+            "{{baseURI}}"
+          ],
+          "path": [
+            "rest",
+            "auth",
+            "1",
+            "session"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateIssue",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const responseJson = pm.response.json();\r",
+              "const issueID = responseJson.id;\r",
+              "\r",
+              "pm.environment.set('issueID', issueID);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "JSESSIONID={{sessionCookie}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"fields\": {\r\n        \"project\":\r\n        {\r\n            \"key\": \"HJJ\"\r\n        },\r\n        \"summary\": \"CreditCard defect.\",\r\n        \"description\": \"Creating my first Bug\",\r\n        \"issuetype\": {\r\n            \"name\": \"Bug\"\r\n        }\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURI}}/rest/api/2/issue",
+          "host": [
+            "{{baseURI}}"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "2",
+            "issue"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AddCommentToIssue",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const responseJson = pm.response.json();\r",
+              "const commentID = responseJson.id;\r",
+              "\r",
+              "pm.environment.set('commentID', commentID);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "JSESSIONID={{sessionCookie}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"body\": \"Hey I have commented from Rest API\",\r\n    \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURI}}/rest/api/2/issue/{{issueID}}/comment",
+          "host": [
+            "{{baseURI}}"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "2",
+            "issue",
+            "{{issueID}}",
+            "comment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetIssue",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "JSESSIONID={{sessionCookie}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURI}}/rest/api/2/issue/{{issueID}}",
+          "host": [
+            "{{baseURI}}"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "2",
+            "issue",
+            "{{issueID}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteIssue",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "JSESSIONID={{sessionCookie}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseURI}}/rest/api/2/issue/{{issueID}}",
+          "host": [
+            "{{baseURI}}"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "2",
+            "issue",
+            "{{issueID}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateComment",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "JSESSIONID={{sessionCookie}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"body\": \"Hey I have Updated existing comment from Rest API\",\r\n    \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURI}}/rest/api/2/issue/{{issueID}}/comment/{{commentID}}",
+          "host": [
+            "{{baseURI}}"
+          ],
+          "path": [
+            "rest",
+            "api",
+            "2",
+            "issue",
+            "{{issueID}}",
+            "comment",
+            "{{commentID}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

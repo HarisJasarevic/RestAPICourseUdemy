@@ -26,7 +26,5 @@ public class SumValidation {
         System.out.println("Sum of all sold courses: " + sum);
         int purchaseAmount = js.getInt("dashboard.purchaseAmount");
         Assert.assertEquals(sum, purchaseAmount, "Validate that sum of all courses sold equals to Purchase Amount");
-
-
     }
 }

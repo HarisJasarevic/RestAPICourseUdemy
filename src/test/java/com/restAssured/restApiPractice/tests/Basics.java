@@ -1,11 +1,14 @@
 package com.restAssured.restApiPractice.tests;
 
 import com.restAssured.restApiPractice.files.ReusableMethods;
-import com.restAssured.restApiPractice.files.payload;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -13,7 +16,7 @@ public class Basics {
 
     @Test (priority = 1, description = "API tests for https://rahulshettyacademy.com using given, When, Then method")
 
-    public void basicTest () {
+    public void basicTest () throws IOException {
 
         //Validate if AddPlace API is working as expected
 
@@ -28,7 +31,11 @@ public class Basics {
                 .log().all()
                 .queryParam("key", "qaclick123")
                 .header("Content-Type", "application/json")
-                .body(payload.AddPlace())
+//                .body(payload.AddPlace())   //Sending JSON as a String Method
+                .body(new String(Files.readAllBytes     //Sending JSON as File Method, Content of File to String ->
+                        (Paths.get("C:\\Users\\haris\\OneDrive\\Desktop" +      // Content of file to Byte ->
+                        "\\Workspace\\RestAPIUdemyCourse\\src\\test\\resources" +    // Byte Data to String
+                        "\\addPlace.json"))))
         .when()
                 .post("maps/api/place/add/json")
         .then()
