@@ -1,0 +1,78 @@
+Postman Project Description: OAuth 2.0 API Testing
+
+The "OAuth_2.0_API_Testing" Postman project is designed to demonstrate the OAuth 2.0 authentication process using Google APIs. It includes three requests: "GetCode", "GET Access Token", and "Actual Request". These requests simulate the flow of obtaining an access token and using it to make authenticated API calls.
+
+Project Details
+
+Postman ID: 3c2f49d4-41dc-4953-868a-35a217b37bcc
+Name: OAuth_2.0_API_Testing
+Schema: https://schema.getpostman.com/json/collection/v2.1.0/collection.json
+Exporter ID: 23441909
+Requests
+
+1. GetCode
+
+This request demonstrates the initial step of the OAuth 2.0 flow, where the user is redirected to the authorization server to grant permission. It is a GET request to the Google OAuth 2.0 authorization endpoint.
+
+Method: GET
+URL:
+Raw: https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.email&auth_url=https://accounts.google.com/o/oauth2/v2/auth&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php
+Protocol: HTTPS
+Host:
+accounts
+google
+com
+Path:
+o
+oauth2
+v2
+auth
+Query Parameters:
+scope: https://www.googleapis.com/auth/userinfo.email
+auth_url: https://accounts.google.com/o/oauth2/v2/auth
+client_id: 692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com
+response_type: code
+redirect_uri: https://rahulshettyacademy.com/getCourse.php
+
+2. GET Access Token
+
+This request represents the second step of the OAuth 2.0 flow, where the authorization code obtained from the previous step is exchanged for an access token. It is a POST request to the Google OAuth 2.0 token endpoint.
+
+Method: POST
+URL:
+Raw: https://www.googleapis.com/oauth2/v4/token?code=4%2F0AY0e-g6UUD1-sMKIpsxzb520ZVflKe7i8xD_oQk6X3t_fjDqhaROnrJncgGX7dEF0jllVg&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&client_secret=erZOWM9g3UtwNRj340YYaK_W&redirect_uri=https://rahulshettyacademy.com/getCourse.php&grant_type=authorization_code#
+Protocol: HTTPS
+Host:
+www
+googleapis
+com
+Path:
+oauth2
+v4
+token
+Query Parameters:
+code: 4%2F0AY0e-g6UUD1-sMKIpsxzb520ZVflKe7i8xD_oQk6X3t_fjDqhaROnrJncgGX7dEF0jllVg
+client_id: 692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com
+client_secret: erZOWM9g3UtwNRj340YYaK_W
+redirect_uri: https://rahulshettyacademy.com/getCourse.php
+grant_type: authorization_code
+
+3. Actual Request
+
+This request showcases how to use the access token obtained from the previous step to make authenticated API calls. It is a GET request to the "getCourse.php" endpoint of the "rahulshettyacademy.com" website.
+
+Method: GET
+URL:
+Raw: https://rahulshettyacademy.com/getCourse.php?access_token=ya29.a0AfH6SMD-EytFH41srRFqd55ewFQGIJDcuEq-uhPn4UYeXmyRkY5NY0VBPYZgAk2zou8KRYZpspkrC3QtrhKS5McUsWoxCFpWoYEVFq3rN00eJCicj-_j9xv8Q-9gTumTGy5rJxgfkMrTVZSbtWnB2LSR0C1L
+Protocol: HTTPS
+Host:
+rahulshettyacademy
+com
+Path:
+getCourse.php
+Query Parameters:
+access_token: ya29.a0AfH6SMD-EytFH41srRFqd55ewFQGIJDcuEq-uhPn4UYeXmyRkY5NY0VBPYZgAk2zou8KRYZpspkrC3QtrhKS5McUsWoxCFpWoYEVFq3rN00eJCicj-_j9xv8Q-9gTumTGy5rJxgfkMrTVZSbtWnB2LSR0C1L
+
+Conclusion
+
+The "OAuth_2.0_API_Testing" Postman project provides a practical example of performing OAuth 2.0 API testing using Google APIs. It guides you through the steps of obtaining an authorization code, exchanging it for an access token, and making authenticated requests. You can execute these requests in Postman to understand the OAuth 2.0 flow and apply similar principles to your own API testing scenarios.
