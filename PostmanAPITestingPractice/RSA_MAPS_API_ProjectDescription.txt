@@ -1,0 +1,43 @@
+Project Description: RSA Maps API Automation
+
+The "RSA_Maps" project is a Postman collection designed for testing and automating API operations related to mapping and location services using RSA Maps API. The project includes a set of API requests that perform actions such as adding a place, retrieving place information, deleting a place, and updating a place.
+
+AddPlace:
+
+This request adds a place to the RSA Maps API.
+The request is a POST method that includes a JSON payload containing details about the place, such as location coordinates (latitude and longitude), accuracy, name, phone number, address, types, website, and language.
+The request body is structured in JSON format with the provided place details.
+The request URL includes the base URL for the RSA Maps API and the necessary endpoints for adding a place.
+The API key is provided as a query parameter in the URL.
+The response of this request is not defined in the project.
+
+GetPlace:
+
+This request retrieves information about a specific place from the RSA Maps API.
+The request is a GET method that includes the API key and the place ID as query parameters.
+The request URL includes the base URL for the RSA Maps API and the necessary endpoints for retrieving a place.
+The place ID and API key are dynamically replaced with environment variables for flexibility.
+The response provides details about the requested place, including its location, name, phone number, address, types, website, and language.
+The response of this request is not defined in the project.
+
+DeletePlace:
+
+This request deletes a specific place from the RSA Maps API.
+The request is a DELETE method that includes the place ID in the request body as a JSON payload.
+The request URL includes the base URL for the RSA Maps API and the necessary endpoints for deleting a place.
+The place ID and API key are provided as query parameters in the URL.
+The place ID is dynamically replaced with an environment variable for flexibility.
+The response of this request is not defined in the project.
+
+UpdatePlace:
+
+This request updates the information of a specific place in the RSA Maps API.
+The request is a PUT method that includes the place ID, updated address, and API key in the request body as a JSON payload.
+The request URL includes the base URL for the RSA Maps API and the necessary endpoints for updating a place.
+The place ID and API key are provided as query parameters in the URL.
+The place ID is dynamically replaced with an environment variable for flexibility.
+The response of this request is not defined in the project.
+
+By utilizing this collection of requests, users can automate various tasks related to mapping and location services using the RSA Maps API. The "AddPlace" request allows for adding places, while the "GetPlace" request retrieves place details based on the place ID. The "DeletePlace" request removes a place from the RSA Maps API, and the "UpdatePlace" request updates the information of a place.
+
+Please note that the project assumes the presence of a valid base URL for the RSA Maps API, which needs to be configured as the "baseURL" environment variable. Additionally, an API key is required and needs to be set as the "key" environment variable for successful execution of the requests.

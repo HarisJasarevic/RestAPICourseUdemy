@@ -1,0 +1,36 @@
+Project Description: Library API Testing Automation
+
+The "Library_API_Testing" project is a Postman collection designed for testing and automating API operations related to a library system. The project consists of a set of API requests that perform actions such as adding books, retrieving book information, and deleting books from the library.
+
+AddBook:
+
+This request is responsible for adding a book to the library.
+The request is a POST method that sends a JSON payload containing book details such as name, ISBN, aisle, and author.
+After the book is successfully added, a script is executed to parse the response body as JSON and extract the book's ID value.
+The extracted ID value is stored in the Postman environment variable "ID" for future use.
+
+AddBook2:
+
+Similar to the "AddBook" request, this request adds another book to the library.
+The request payload includes the book's details such as name, ISBN, aisle, and author.
+Upon successful addition of the book, a script is executed to parse the response body as JSON and extract the book's ID value.
+The extracted ID value is stored in the "ID" environment variable for later use.
+
+GetBook:
+
+This request retrieves information about a specific book from the library.
+The request is a GET method that includes the book's ID as a query parameter.
+The book's ID is replaced dynamically using the "ID" environment variable.
+The response provides details such as the book's name, ISBN, aisle, and author.
+D
+eleteBook:
+
+This request deletes a book from the library based on its ID.
+The request is a POST method that includes the book's ID in the request body as a JSON payload.
+The book's ID is also provided as a query parameter in the URL.
+The book's ID value is dynamically replaced with the "ID" environment variable.
+Upon successful deletion, the book is removed from the library.
+
+By utilizing this collection of requests, users can automate various tasks related to library operations. The "AddBook" and "AddBook2" requests allow for the addition of books, while the "GetBook" request retrieves book details based on the ID. The "DeleteBook" request removes a book from the library using the ID.
+
+Please note that the project assumes the presence of a valid base URI for the library's API, which needs to be configured as the "baseURI" environment variable.

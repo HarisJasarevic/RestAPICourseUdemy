@@ -102,7 +102,6 @@ public class JiraTest {
                 System.out.println(message);
                 Assert.assertEquals(message, expectedMessage);
             }
-            break;
         }
     }
 }

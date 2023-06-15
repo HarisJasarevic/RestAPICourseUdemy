@@ -1,0 +1,48 @@
+Project Description: JIRA API Session Automation
+
+This project, named "JIRA_API_Session," is designed to automate various tasks related to the JIRA API. It utilizes Postman, a popular API development and testing tool, to perform the automation tasks. The project consists of a collection of API requests and associated scripts, enabling users to perform actions such as authentication, issue creation, comment addition, issue retrieval, issue deletion, and comment update.
+
+The project structure is as follows:
+
+GetAuthCookie:
+
+This request is responsible for obtaining the authentication cookie required for subsequent API requests.
+The request is a POST method that sends the username and password as the request body.
+Upon receiving the response, a script is executed to extract the session cookie and store it in the Postman environment variable "sessionCookie."
+
+CreateIssue:
+
+This request creates a new issue in JIRA.
+The request is a POST method that requires the JSESSIONID cookie obtained from the previous request for authentication.
+The request body contains the necessary information for the new issue, such as project key, summary, description, and issue type.
+After a successful response, a script is executed to extract the issue ID and store it in the Postman environment variable "issueID."
+
+AddCommentToIssue:
+
+This request adds a comment to an existing JIRA issue.
+The request is a POST method that also requires the JSESSIONID cookie for authentication.
+The request body includes the comment text and its visibility settings.
+Upon receiving a response, a script is executed to extract the comment ID and store it in the Postman environment variable "commentID."
+
+GetIssue:
+
+This request retrieves detailed information about a specific JIRA issue.
+The request is a GET method that requires the JSESSIONID cookie for authentication.
+The issue ID is provided in the URL path, which is replaced dynamically using the "issueID" environment variable.
+The response provides information such as issue status, description, and assignee.
+
+DeleteIssue:
+
+This request deletes a JIRA issue.
+The request is a DELETE method that requires the JSESSIONID cookie for authentication.
+The issue ID is provided in the URL path, using the "issueID" environment variable.
+
+UpdateComment:
+
+This request updates an existing comment on a JIRA issue.
+The request is a PUT method that also requires the JSESSIONID cookie for authentication.
+The request body contains the updated comment text and visibility settings.
+The comment ID and issue ID are provided in the URL path, utilizing the "commentID" and "issueID" environment variables, respectively.
+By utilizing this collection of requests and associated scripts, users can perform automated actions on JIRA issues through the JIRA API. The project provides a foundation for testing, integration, or other automation tasks related to JIRA's functionality.
+
+Please note that the project assumes the presence of a valid JIRA base URI and appropriate environment variable configurations for the username and password required for authentication.
