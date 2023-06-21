@@ -26,7 +26,7 @@ public class oAuthTest {
 
         String url = "https://rahulshettyacademy.com/getCourse.php?state=verifyfjdss&code=4%2F0AbUR2VNHfVakmhv3VRnydQTIhxgirpHeZUibDVhS99Da957duDsqCK73ym8Myj-GXwC4Qg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
 
-        String partialCode = url.split("code=")[1];
+        String partialCode = url.split("code=")[1];         //Parsing URL to extract code
         String code = partialCode.split("&scope")[0];
         System.out.println("This is extracted code from URL :" + code);     //Extracted code
 
@@ -53,7 +53,7 @@ public class oAuthTest {
         System.out.println("This is access token: " + accessToken);
 
 
-        
+
         //ACTUAL REQUEST
 
         String response =   //Capture response as a String
