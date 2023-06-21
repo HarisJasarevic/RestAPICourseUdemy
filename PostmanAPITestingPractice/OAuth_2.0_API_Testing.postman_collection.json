@@ -12,7 +12,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.email&auth_url=https://accounts.google.com/o/oauth2/v2/auth&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php",
+          "raw": "https://accounts.google.com/o/oauth2/v2/auth/identifier?scope=https://www.googleapis.com/auth/userinfo.email&auth_url=https://accounts.google.com/o/oauth2/v2/auth&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php&state=verifyfjdss&service=lso&o2v=2&flowName=GeneralOAuthFlow",
           "protocol": "https",
           "host": [
             "accounts",
@@ -23,7 +23,8 @@
             "o",
             "oauth2",
             "v2",
-            "auth"
+            "auth",
+            "identifier"
           ],
           "query": [
             {
@@ -45,6 +46,22 @@
             {
               "key": "redirect_uri",
               "value": "https://rahulshettyacademy.com/getCourse.php"
+            },
+            {
+              "key": "state",
+              "value": "verifyfjdss"
+            },
+            {
+              "key": "service",
+              "value": "lso"
+            },
+            {
+              "key": "o2v",
+              "value": "2"
+            },
+            {
+              "key": "flowName",
+              "value": "GeneralOAuthFlow"
             }
           ]
         }
@@ -57,7 +74,7 @@
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "https://www.googleapis.com/oauth2/v4/token?code=4%2F0AY0e-g6UUD1-sMKIpsxzb520ZVflKe7i8xD_oQk6X3t_fjDqhaROnrJncgGX7dEF0jllVg&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&client_secret=erZOWM9g3UtwNRj340YYaK_W&redirect_uri=https://rahulshettyacademy.com/getCourse.php&grant_type=authorization_code#",
+          "raw": "https://www.googleapis.com/oauth2/v4/token?code=4%2F0AbUR2VMZ3fVASX4a6XTHqYBUwt23HgXuxy_K3mSgtFICEPciPtYRpzXKAvqgnw7XNimO5g&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&client_secret=erZOWM9g3UtwNRj340YYaK_W&redirect_uri=https://rahulshettyacademy.com/getCourse.php&grant_type=authorization_code#",
           "protocol": "https",
           "host": [
             "www",
@@ -72,7 +89,7 @@
           "query": [
             {
               "key": "code",
-              "value": "4%2F0AY0e-g6UUD1-sMKIpsxzb520ZVflKe7i8xD_oQk6X3t_fjDqhaROnrJncgGX7dEF0jllVg"
+              "value": "4%2F0AbUR2VMZ3fVASX4a6XTHqYBUwt23HgXuxy_K3mSgtFICEPciPtYRpzXKAvqgnw7XNimO5g"
             },
             {
               "key": "client_id",
@@ -122,7 +139,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://rahulshettyacademy.com/getCourse.php?access_token=ya29.a0AfH6SMD-EytFH41srRFqd55ewFQGIJDcuEq-uhPn4UYeXmyRkY5NY0VBPYZgAk2zou8KRYZpspkrC3QtrhKS5McUsWoxCFpWoYEVFq3rN00eJCicj-_j9xv8Q-9gTumTGy5rJxgfkMrTVZSbtWnB2LSR0C1L",
+          "raw": "https://rahulshettyacademy.com/getCourse.php?access_token=ya29.a0AWY7CklHIAp5ACj9nHewLt2TctxAD2rYdmfCkQr3W_MepyMvESFtzZOhuGP2d8gB0UU_BSgg1G5DEzzeLfunZbjlFSFzg_frIz_MDgEOLxB33JB2pezlXRPAP3UCR02dCvHDFneXISbPun-8XvhXfmAY_jK7aCgYKAXYSARASFQG1tDrpG0ERvwLN_W1ET_bbGFVlyw0163",
           "protocol": "https",
           "host": [
             "rahulshettyacademy",
@@ -134,7 +151,7 @@
           "query": [
             {
               "key": "access_token",
-              "value": "ya29.a0AfH6SMD-EytFH41srRFqd55ewFQGIJDcuEq-uhPn4UYeXmyRkY5NY0VBPYZgAk2zou8KRYZpspkrC3QtrhKS5McUsWoxCFpWoYEVFq3rN00eJCicj-_j9xv8Q-9gTumTGy5rJxgfkMrTVZSbtWnB2LSR0C1L"
+              "value": "ya29.a0AWY7CklHIAp5ACj9nHewLt2TctxAD2rYdmfCkQr3W_MepyMvESFtzZOhuGP2d8gB0UU_BSgg1G5DEzzeLfunZbjlFSFzg_frIz_MDgEOLxB33JB2pezlXRPAP3UCR02dCvHDFneXISbPun-8XvhXfmAY_jK7aCgYKAXYSARASFQG1tDrpG0ERvwLN_W1ET_bbGFVlyw0163"
             }
           ]
         }

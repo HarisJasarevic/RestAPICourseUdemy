@@ -9,6 +9,7 @@
             <class name="com.restAssured.restApiPractice.tests.SumValidation"/>
             <class name="com.restAssured.restApiPractice.tests.DynamicJsonTest"/>
             <class name="com.restAssured.restApiPractice.tests.JiraTest"/>
+            <class name="com.restAssured.restApiPractice.tests.oAuthTest"/>
         </classes>
     </test>
 </suite>
