@@ -24,7 +24,7 @@ public class oAuthTest {
 //        Thread.sleep(4000);
 //        String url = driver.getCurrentUrl();        //Capture current URL to extraxt code - Google doesn't allow, so we manualy enter url in line below
 
-        String url = "https://rahulshettyacademy.com/getCourse.php?state=verifyfjdss&code=4%2F0AbUR2VNHfVakmhv3VRnydQTIhxgirpHeZUibDVhS99Da957duDsqCK73ym8Myj-GXwC4Qg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
+        String url = "https://rahulshettyacademy.com/getCourse.php?state=verifyfjdss&code=4%2F0AZEOvhXH-8BdQG_Y3ka_bqIHAI_4v6WfOHeYA42VzEXCbeKUyN7o845MG81YEOgbNPifHA&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
 
         String partialCode = url.split("code=")[1];         //Parsing URL to extract code
         String code = partialCode.split("&scope")[0];
